@@ -1,12 +1,8 @@
 # api/urls.py
 
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import MiningOilDataViewSet
-
-router = DefaultRouter()
-router.register(r'mining-oil-data', MiningOilDataViewSet)
+from django.urls import path
+from .views import linear_regression_prediction
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('mining-oil-data/predict/', linear_regression_prediction, name='linear_regression_prediction'),
 ]
